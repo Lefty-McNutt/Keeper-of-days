@@ -1,0 +1,9 @@
+{
+  "name": "keeper-of-days",
+  "version": "1.0.0",
+  "description": "Square automation for barbershop blocking",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
