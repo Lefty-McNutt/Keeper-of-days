@@ -1,0 +1,26 @@
+name: Block Square Time
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [block-square]
+
+jobs:
+  block:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run blocker
+        env:
+          SQUARE_EMAIL: ${{ secrets.SQUARE_EMAIL }}
+          SQUARE_PASSWORD: ${{ secrets.SQUARE_PASSWORD }}
+        run: node index.js
